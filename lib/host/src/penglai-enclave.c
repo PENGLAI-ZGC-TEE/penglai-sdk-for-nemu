@@ -29,8 +29,11 @@ int PLenclave_create(struct PLenclave* PLenclave, struct elf_args* u_elffile, st
   PLenclave->elffile = u_elffile;
 
   PLenclave->user_param.elf_ptr = (unsigned long)u_elffile->ptr;
+  PLenclave->user_param.enclave_class = u_param->enclave_class;
+  printf("[S]PLenclave->user_param.enclave_class: %d; u_param->enclave_class: %d\n", PLenclave->user_param.enclave_class, u_param->enclave_class);
   PLenclave->user_param.elf_size = u_elffile->size;
   PLenclave->user_param.stack_size = u_param->stack_size;
+  printf("[S]PLenclave->user_param.stack_size %ld\n", PLenclave->user_param.stack_size);
   PLenclave->user_param.untrusted_mem_ptr = u_param->untrusted_mem_ptr;
   PLenclave->user_param.untrusted_mem_size = u_param->untrusted_mem_size;
   PLenclave->user_param.ocall_buf_size = 0;

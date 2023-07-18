@@ -41,7 +41,12 @@ void* create_enclave(void* args0)
   struct elf_args * enclaveFile = (struct elf_args *)in;
   params->untrusted_mem_size = DEFAULT_UNTRUSTED_SIZE;
   params->untrusted_mem_ptr = 0;
-  if(PLenclave_create(enclave, enclaveFile, params) < 0 )
+  params->enclave_class = SPMP_REGION;
+  
+  printf("[U]params->enclave_class = %d\n", params->enclave_class);
+  printf("[U]params->stack_size: %ld\n", params->stack_size);
+
+  if (PLenclave_create(enclave, enclaveFile, params) < 0)
   {
     printf("host:%d: failed to create enclave\n");
     pthread_exit((void*)0);

@@ -70,6 +70,7 @@ struct signature_t
 struct penglai_enclave_user_param
 {
   unsigned long eid;
+  int enclave_class;
   unsigned long elf_ptr;
   long elf_size;
   long stack_size;
@@ -88,6 +89,7 @@ struct penglai_enclave_attest_param
 
 struct enclave_args
 {
+  int enclave_class;
   unsigned long stack_size;
   unsigned long untrusted_mem_ptr;
   unsigned long untrusted_mem_size;
