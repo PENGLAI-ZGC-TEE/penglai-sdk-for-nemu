@@ -48,7 +48,7 @@ void* create_enclave(void* args0)
 
   if (PLenclave_create(enclave, enclaveFile, params) < 0)
   {
-    printf("host:%d: failed to create enclave\n");
+    printf("host:%d: failed to create enclave\n", i);
     pthread_exit((void*)0);
   }
   else

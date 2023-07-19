@@ -39,6 +39,12 @@
 #define HASH_SIZE              32
 #define SIGNATURE_SIZE         64
 
+typedef enum
+{
+  PMP_REGION = 0,
+  SPMP_REGION,
+} enclave_class_t;
+
 // Atestation-related structure
 struct sm_report_t
 {
@@ -89,7 +95,7 @@ struct penglai_enclave_attest_param
 
 struct enclave_args
 {
-  int enclave_class;
+  enclave_class_t enclave_class;
   unsigned long stack_size;
   unsigned long untrusted_mem_ptr;
   unsigned long untrusted_mem_size;

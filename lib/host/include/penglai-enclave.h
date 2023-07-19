@@ -14,8 +14,6 @@
 #define RETURN_USER_EXIT_ENCL   0
 #define RETURN_USER_FOR_OCALL   1
 
-#define PMP_REGION  0
-#define SPMP_REGION 1
 
 struct PLenclave
 {
