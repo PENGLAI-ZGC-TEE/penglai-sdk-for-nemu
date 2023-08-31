@@ -41,8 +41,8 @@
 
 typedef enum
 {
-  PMP_REGION = 0,
-  SPMP_REGION,
+  LIGHT_REGION = 0,
+  HEAVY_REGION,
 } enclave_class_t;
 
 // Atestation-related structure
