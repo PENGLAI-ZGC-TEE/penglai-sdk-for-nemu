@@ -1,3 +1,5 @@
+export PENGLAI_SDK=$(abspath ../repo)
+
 all:
 	make -C musl
 	make -C lib

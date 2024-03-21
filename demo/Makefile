@@ -1,5 +1,6 @@
 all:
 	make -C host
+	make -C rot_hmac
 	make -C prime
 	make -C aes
 	make -C mem
@@ -19,3 +20,4 @@ clean:
 	make -C count clean
 	make -C gm_test_enclaves clean
 	make -C seal_data clean
+	make -C rot_hmac clean
